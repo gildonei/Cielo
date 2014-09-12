@@ -1,24 +1,22 @@
 Cielo
 =====
 
-Cielo é uma classe cliente para o web service da Cielo.
+Biblioteca cliente para o web service da Cielo.
 
-Com esta classe, sua aplicação será capaz de realizar transações
-a Crédito e Débito com cartões VISA e Mastercard.
+Com esta biblioteca sua aplicação será capaz de realizar transações
+a Crédito e Débito com cartões aceitos pela Cielo.
 
-Requisitos: 
+# Requisitos 
 * PHP 5.5
 * Extensão cURL
 * Extensão SimpleXML
 
 
 Instalando via composer.
-    require: "mrprompt/cielo": "dev-master"  
+    require: "mrprompt/cielo": "3.0-dev"  
 
 Packagist:
 	https://packagist.org/packages/mrprompt/cielo
-
-
 
 branch 3.0-dev status
 [![Build Status](https://travis-ci.org/mrprompt/Cielo.png?branch=3.0-dev)](https://travis-ci.org/mrprompt/Cielo)

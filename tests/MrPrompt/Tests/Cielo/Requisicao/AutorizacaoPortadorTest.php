@@ -1,10 +1,12 @@
 <?php
-namespace MrPrompt\Cielo\Requisicao;
+namespace MrPrompt\Tests\Cielo\Requisicao;
 
-class AutorizacaoPortadorTest extends \PHPUnit_Framework_TestCase
+use MrPrompt\Cielo\Requisicao\AutorizacaoPortador;
+use PHPUnit_Framework_TestCase;
+
+class AutorizacaoPortadorTest extends PHPUnit_Framework_TestCase
 {
     /**
-     *
      * @var AutorizacaoPortador
      */
     protected $object;

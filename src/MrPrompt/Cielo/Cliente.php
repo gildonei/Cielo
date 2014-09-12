@@ -33,6 +33,8 @@ use MrPrompt\Cielo\Requisicao\SolicitacaoTransacao;
 use MrPrompt\Cielo\Requisicao\SolicitacaoToken;
 use Respect\Validation\Validator as v;
 
+use MrPrompt\Cielo\Resposta\IdentificacaoTransacao as RespostaIdentificacaoTransacao;
+
 /**
  * Cliente de integração com a Cielo
  *
@@ -364,9 +366,11 @@ class Cliente
      */
     public function tid(Transacao $transacao, Cartao $cartao)
     {
-        return $this->enviaRequisicao(
+        $tid =  $this->enviaRequisicao(
             new IdentificacaoTransacao($this->autorizacao, $transacao, $cartao)
         );
+        
+        return new RespostaIdentificacaoTransacao($tid->getResposta());
     }
 
     /**

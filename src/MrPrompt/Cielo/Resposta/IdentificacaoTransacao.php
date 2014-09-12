@@ -19,6 +19,9 @@
 
 namespace MrPrompt\Cielo\Resposta;
 
+use MrPrompt\Cielo\Resposta\Resposta;
+use SimpleXMLElement;
+
 /**
  * Requisição de autorizacao de portador
  *
@@ -26,4 +29,34 @@ namespace MrPrompt\Cielo\Resposta;
  */
 class IdentificacaoTransacao extends Resposta
 {
+    /**
+     * @var integer
+     */
+    private $tid;
+    
+    /**
+     * @var string
+     */
+    private $xml;
+    
+    /**
+     * Construtor
+     * 
+     * @param SimpleXMLElement $xml
+     */
+    public function __construct(SimpleXMLElement $xml)
+    {
+        $this->xml = $xml;
+        $this->tid = $xml->tid;
+    }
+    
+    /**
+     * Retorna a representação xml da resposta da requisição
+     * 
+     * @return string
+     */
+    public function getXML()
+    {
+        return $this->xml->asXML();
+    }
 }

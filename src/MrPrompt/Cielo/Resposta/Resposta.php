@@ -19,6 +19,8 @@
 
 namespace MrPrompt\Cielo\Resposta;
 
+use SimpleXMLElement;
+
 /**
  * Cada resposta do webservice representa gera classe de resposta correspondente
  *
@@ -26,4 +28,11 @@ namespace MrPrompt\Cielo\Resposta;
  */
 abstract class Resposta
 {
+    /**
+     * @return SimpleXMLElement
+     */
+    public function getXml()
+    {
+        
+    }
 }

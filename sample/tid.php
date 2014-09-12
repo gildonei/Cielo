@@ -7,9 +7,11 @@ use MrPrompt\Cielo\Cliente;
 
 $transacao = require_once __DIR__ . '/resources/transacao.php';
 $cartao    = require_once __DIR__ . '/resources/cartao.php';
-$cielo     = new Cliente(new Autorizacao(NUMERO_CIELO, CHAVE_CIELO));
+
+$autorizacao = new Autorizacao(NUMERO_CIELO, CHAVE_CIELO);
+$cielo       = new Cliente($autorizacao);
 $cielo->setAmbiente('teste');
+
 $requisicao = $cielo->tid($transacao, $cartao);
 
-echo 'XML GERADO: ', $requisicao->getEnvio()->asXML(), PHP_EOL;
-echo 'RETORNO: ', $requisicao->getResposta()->asXML(), PHP_EOL;
+echo 'RETORNO: ', $requisicao->getTid(), PHP_EOL;

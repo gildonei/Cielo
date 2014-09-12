@@ -12,11 +12,10 @@ a Crédito e Débito com cartões aceitos pela Cielo.
 * Extensão SimpleXML
 
 
-Instalando via composer.
+## Instalando via composer.
     require: "mrprompt/cielo": "3.0-dev"  
 
-Packagist:
+## Packagist:
 	https://packagist.org/packages/mrprompt/cielo
 
-branch 3.0-dev status
 [![Build Status](https://travis-ci.org/mrprompt/Cielo.png?branch=3.0-dev)](https://travis-ci.org/mrprompt/Cielo)

@@ -11,7 +11,7 @@
     "phpunit/phpunit" : "~4.1",
     "squizlabs/php_codesniffer" : "*",
     "pdepend/pdepend" : "*",
-    "theseer/phpdox" : "0.5.*@dev"
+    "theseer/phpdox" : "*"
   },
   "authors" : [ {
     "name" : "Thiago Paes",

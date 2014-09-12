@@ -5,7 +5,8 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use MrPrompt\Cielo\Autorizacao;
 use MrPrompt\Cielo\Cliente;
 
-$cielo = new Cliente(new Autorizacao(NUMERO_CIELO, CHAVE_CIELO));
+$autorizacao = new Autorizacao(NUMERO_CIELO, CHAVE_CIELO);
+$cielo = new Cliente($autorizacao);
 $cielo->setAmbiente('teste');
 
 $transacao  = require_once __DIR__ . '/resources/transacao.php';

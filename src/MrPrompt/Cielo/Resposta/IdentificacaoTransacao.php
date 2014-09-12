@@ -19,6 +19,7 @@
 
 namespace MrPrompt\Cielo\Resposta;
 
+use MrPrompt\Cielo\Requisicao\IdentificacaoTransacao as Requisicao;
 use MrPrompt\Cielo\Resposta\Resposta;
 use SimpleXMLElement;
 
@@ -30,24 +31,18 @@ use SimpleXMLElement;
 class IdentificacaoTransacao extends Resposta
 {
     /**
-     * @var integer
+     * @ var Requisicao
      */
-    private $tid;
-    
-    /**
-     * @var string
-     */
-    private $xml;
+    private $req;
     
     /**
      * Construtor
      * 
-     * @param SimpleXMLElement $xml
+     * @param Requisicao $xml
      */
-    public function __construct(SimpleXMLElement $xml)
+    public function __construct(Requisicao $requisicao)
     {
-        $this->xml = $xml;
-        $this->tid = $xml->tid;
+        $this->req = $requisicao;
     }
     
     /**
@@ -57,6 +52,16 @@ class IdentificacaoTransacao extends Resposta
      */
     public function getXML()
     {
-        return $this->xml->asXML();
+        return $this->req->getResposta()->asXML();
+    }
+    
+    /**
+     * Retorna o Identificador de Transação gerado
+     * 
+     * @return integer
+     */
+    public function getIdentificador()
+    {
+        return $this->req->getResposta()->tid;
     }
 }

@@ -19,6 +19,8 @@
 
 namespace MrPrompt\Cielo\Resposta;
 
+use MrPrompt\Cielo\Requisicao\AutorizacaoPortador as Requisicao;
+
 /**
  * Resposta da requisição de autorizacao de portador
  *
@@ -26,4 +28,17 @@ namespace MrPrompt\Cielo\Resposta;
  */
 class AutorizacaoPortador extends Resposta
 {
+    /**
+     * @var AutorizacaoPortador
+     */
+    private $requisicao;
+    
+    /**
+     * 
+     * @param Requisicao $requisicao
+     */
+    public function __construct(Requisicao $requisicao)
+    {
+        
+    }
 }

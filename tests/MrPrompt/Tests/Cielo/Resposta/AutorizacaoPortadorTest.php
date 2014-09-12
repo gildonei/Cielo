@@ -18,6 +18,8 @@ class AutorizacaoPortadorTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->object = new AutorizacaoPortador();
+        $mock = $this->getMock('MrPrompt\Cielo\Requisicao\AutorizacaoPortador', array(), array(), '', false);
+        
+        $this->object = new AutorizacaoPortador($mock);
     }
 }

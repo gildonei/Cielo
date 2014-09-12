@@ -362,15 +362,14 @@ class Cliente
      * @access public
      * @param  Transacao              $transacao
      * @param  Cartao                 $cartao
-     * @return IdentificacaoTransacao
+     * @return RespostaIdentificacaoTransacao
      */
     public function tid(Transacao $transacao, Cartao $cartao)
     {
-        $tid =  $this->enviaRequisicao(
-            new IdentificacaoTransacao($this->autorizacao, $transacao, $cartao)
-        );
+        $requisicao = new IdentificacaoTransacao($this->autorizacao, $transacao, $cartao);
+        $tid        = $this->enviaRequisicao($requisicao);
         
-        return new RespostaIdentificacaoTransacao($tid->getResposta());
+        return new RespostaIdentificacaoTransacao($requisicao);
     }
 
     /**
